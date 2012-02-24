@@ -42,3 +42,19 @@ Migrating to AddUserIdToTask (20120222192902)
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("projects")[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("tasks")
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateTasks (20120222184047)
+Migrating to CreateProjects (20120222184154)
+Migrating to CreateUsers (20120222184217)
+Migrating to AddUserIdToTask (20120222192902)
+Migrating to AddProjectIdToTask (20120224160720)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (21.7ms)[0m  ALTER TABLE "tasks" ADD "project_id" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120224160720')[0m
+  [1m[35m (150.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("projects")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tasks")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
